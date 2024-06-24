@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?> <?import javafx.geometry.*?> <?import javafx.scene.control.*?> <?import javafx.scene.layout.*?> <?import javafx.scene.text.*?> <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ServerController"> <children> <Label layoutX="300.0" layoutY="20.0" text="Server" textAlignment="CENTER" textFill="#27ae60"> <font> <Font name="System Bold" size="36.0" /> </font> </Label>
+<VBox layoutX="50.0" layoutY="100.0" spacing="20.0">
+        <Label text="Connection To:" textFill="#27ae60">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label text="Port:" textFill="#27ae60" />
+            <TextField fx:id="serverport" prefHeight="30.0" prefWidth="150.0" style="-fx-border-color: #27ae60; -fx-border-width: 2px;" />
+        </HBox>
+        <Button fx:id="btnStart" mnemonicParsing="false" onAction="#startServerBtn" style="-fx-background-color: #27ae60; -fx-text-fill: #fff;" text="Start">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="stopServer" mnemonicParsing="false" onAction="#stopServerBtn" style="-fx-background-color: #e74c3c; -fx-text-fill: #fff;" text="Stop">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+    </VBox>
+    
+    <VBox layoutX="400.0" layoutY="100.0" spacing="20.0">
+        <Label text="DB Connection" textFill="#27ae60">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <GridPane hgap="10.0" vgap="10.0">
+            <Label text="Host:" textFill="#27ae60" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="dbhost" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: #27ae60; -fx-border-width: 2px;" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+            
+            <Label text="Port:" textFill="#27ae60" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <TextField fx:id="dbport" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: #27ae60; -fx-border-width: 2px;" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            
+            <Label text="Scheme:" textFill="#27ae60" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="dbscheme" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: #27ae60; -fx-border-width: 2px;" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            
+            <Label text="Username:" textFill="#27ae60" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <TextField fx:id="dbusername" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: #27ae60; -fx-border-width: 2px;" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+            
+            <Label text="Password:" textFill="#27ae60" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+            <PasswordField fx:id="dbpass" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: #27ae60; -fx-border-width: 2px;" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+        </GridPane>
+        
+        <HBox spacing="10.0">
+            <Button fx:id="btnConnect" mnemonicParsing="false" onAction="#connect" style="-fx-background-color: #27ae60; -fx-text-fill: #fff;" text="Connect">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="btnDisonnect" mnemonicParsing="false" onAction="#disonnect" style="-fx-background-color: #e74c3c; -fx-text-fill: #fff;" text="Disconnect">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+        </HBox>
+    </VBox>
+    
+    <VBox layoutX="50.0" layoutY="400.0" spacing="10.0">
+        <Label text="Log:" textFill="#27ae60">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="logUpdate" editable="false" prefHeight="150.0" prefWidth="700.0" style="-fx-border-color: #27ae60; -fx-border-width: 2px;">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </TextArea>
+    </VBox>
+    
+</children>
+</Pane>
